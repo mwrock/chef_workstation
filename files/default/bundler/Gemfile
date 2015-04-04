@@ -1,0 +1,8 @@
+source "https://rubygems.org"
+
+gem "chef-vault"
+gem "kitchen-docker"
+gem "winrm-transport"
+gem "test-kitchen", "1.4.0.rc.1"
+gem 'kitchen-vagrant', "0.17.0.rc.1"
+gem "vagrant-wrapper"

@@ -1,0 +1,211 @@
+
+# Nuget (exclude all exes except for the one in the global build folder)
+nuget.exe
+!build/nuget/nuget.exe
+*.nupkg
+
+##### .gitignore from T3N
+
+# NuGet packages
+[Bb]uild/[Pp]ackages/
+Tier3.Errors/[Pp]ackages/
+Tier3.Platform/[Pp]ackages/
+Tier3.Infrastructure/[Pp]ackages/
+apitests/packages
+
+# Build System
+build-common/
+output/
+
+# Minified JS / CSS - /Tier3.Platform/Tier3.Platform.Control.Web/**/*.min.(js|css)
+*.min.css
+jquery.min.js
+
+# Probably not a good idea to be keeing VM inages in source control
+*.vhd
+*.vhdx
+
+
+
+# MISC files
+Tier3.Iis/Tier3.RegularExpressions/Tier3.RegularExpressions.dll
+References/Tier3/
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Webstorm files
+*.idea
+.idea
+.idea/
+
+#Mono (or something?) files
+*.pidb
+*.userprefs
+
+#Visual Studio files
+*.docstates
+*.[Oo]bj
+*.dat
+*.crc
+*.dbmdl
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.schemaview
+ipch/
+[Oo]bj/
+[Bb]in/*
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+
+#Tooling
+_ReSharper*/
+*.[Rr]e[Ss]harper
+[Tt]est[Rr]esult*
+.[Jj]ust[Cc]ode
+*ncrunch*
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+#Rails Heroku and other bits to ignore
+*.log
+*.sqlite3
+db/*.sqlite3
+.bundle
+log/*
+tmp/*
+public/system/*
+
+##### .gitignore from ECP
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+
+#Webstorm files
+*.idea
+.idea
+.idea/
+
+#Mono (or something?) files
+*.pidb
+*.userprefs
+
+#Visual Studio files
+*.dbmdl
+*.docstates
+*.[Oo]bj
+*.dat
+*.crc
+*.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*.vssscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.[Cc]ache
+*.ilk
+*.log
+*.lib
+*.sbr
+*.dbmdl
+ipch/
+obj/
+[Bb]in/*
+[Dd]ebug*/
+[Rr]elease*/
+Ankh.NoLoad
+/packages
+
+#Tooling
+_ReSharper*/
+*.[Rr]e[Ss]harper
+[Tt]est[Rr]esult*
+
+#Subversion files
+.svn
+
+# Office Temp Files
+~$*
+
+#Rails Heroku and other bits to ignore
+*.log
+*.sqlite3
+db/*.sqlite3
+.bundle
+log/*
+tmp/*
+public/system/*
+
+#ECP Build Stuffs
+ecp/[Pp]ackages/
+t3n/[Pp]ackages/
+billing/Tier3.Billing/[Pp]ackages/
+[Oo]utput/
+[Bb]uild-common/
+logs/
+
+#Chutzpah Code Coverage
+_chutzpah.coverage.*
+
+#Pester Test summary
+Test.xml
+
+#Vagrant box images and metadata
+.vagrant
+
+# Git files
+*.orig
+
+#Chef
+.kitchen/
+nodes
+metadata.json
+
+#nodejs
+node_modules
+
+#ruby
+*.gem
+
+.rake_test_cache
+
+###
+# Ignore Chef key files and secrets
+###
+.chef/*.pem
+.chef/encrypted_data_bag_secret
+.chef
+
+# Ignore Chef-Zero files
+clients
+nodes

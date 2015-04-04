@@ -1,0 +1,16 @@
+* text=auto
+
+*.bmp binary
+*.gif binary
+*.jpg binary
+*.png binary
+
+*.ps1 diff
+
+# force crlf
+*.sln text eol=crlf
+
+# force lf
+*.sh text eol=lf
+*.DotSettings eol=lf
+BootstrapScripts eol=lf
