@@ -32,7 +32,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "chef_solo" do |chef|
-    chef.cookbooks_path "."
     chef_recipe.each {|recipe| chef.add_recipe recipe}
     chef.json = {
       "chef_workstation" => {

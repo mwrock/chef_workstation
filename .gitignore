@@ -209,3 +209,8 @@ node_modules
 # Ignore Chef-Zero files
 clients
 nodes
+
+Gemfile
+Gemfile.lock
+!/cookbooks/chef_workstation/files/default/bundler/Gemfile
+!/cookbooks/chef_workstation/files/default/bundler/Gemfile.lock
