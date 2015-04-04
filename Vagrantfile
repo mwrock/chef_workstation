@@ -32,14 +32,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "chef_solo" do |chef|
+    chef.cookbooks_path "."
     chef_recipe.each {|recipe| chef.add_recipe recipe}
     chef.json = {
       "chef_workstation" => {
         "user" => "vagrant",
         "group" => "vagrant",
-        "chef_user" => "#{USER}",
-        "berkshelf_client_key" => "/chef-repo/.chef/#{USER}.pem",
-        "berkshelf_chef_user" => "#{USER}"
+        "chef_user" => "#{USER}"
       }
     }
   end
