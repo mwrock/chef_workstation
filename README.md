@@ -1,11 +1,16 @@
 # chef_workstation
 
-Installs an ubuntu 12.02 bix with:
+Installs an ubuntu 12.02 box with:
 - chefdk
 - docker
 - latest test-kitchen
 
 ## Prerequisites
+
+### Install vagrant
+```
+wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb"
+sudo dpkg -i "vagrant_1.7.2_x86_64.deb"
 
 ### Install Vagrant-omnibus
 `$ vagrant plugin install vagrant-omnibus`
