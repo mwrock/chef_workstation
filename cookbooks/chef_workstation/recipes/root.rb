@@ -25,6 +25,15 @@ end
 
 dpkg_package "/var/cache/wget/chefdk_0.4.0-1_amd64.deb"
 
+remote_file "/var/cache/wget/vagrant_1.7.2_x86_64.deb" do
+  source "https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb"
+  not_if { ::File.exists?("/var/cache/wget/vagrant_1.7.2_x86_64.deb") }
+end
+
+dpkg_package "/var/cache/wget/vagrant_1.7.2_x86_64.deb"
+
+execute "/opt/chefdk/embedded/bin/vagrant plugin install vagrant-winrm"
+
 package 'git'
 
 directory node["chef_workstation"]["bundler_path"]
