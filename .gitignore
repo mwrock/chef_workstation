@@ -214,3 +214,6 @@ Gemfile
 Gemfile.lock
 !/cookbooks/chef_workstation/files/default/bundler/Gemfile
 !/cookbooks/chef_workstation/files/default/bundler/Gemfile.lock
+
+cookbooks/*
+!cookbooks/chef_workstation
