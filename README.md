@@ -21,7 +21,7 @@ This box is an adaptation of the vagrant box we use at CenturyLink cloud develop
 ```
 wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.2_x86_64.deb"
 sudo dpkg -i "vagrant_1.7.2_x86_64.deb"
-
+```
 ### Install Vagrant-omnibus
 `$ vagrant plugin install vagrant-omnibus`
 
