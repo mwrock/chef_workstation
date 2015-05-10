@@ -72,15 +72,15 @@ You may want to change other settinga in the `Vagrantfile` such as memory (defau
 
 The best way to override any of these settings is by changing/adding the overrides set in the `Vagrantfile`.
 
-default["chef_workstation"]["chef_user"] - Defaults to the name of the user logged in on the host.
-default["chef_workstation"]["user"] - Defaults to 'vagrant'
-default["chef_workstation"]["group"] - Defaults to 'vagrant'
-default['chef_workstation']['chefdk_version'] - Defaults to 0.5.1-1
-default['chef_workstation']['vagrant_version'] - Defaults to the version on the host
-default['chef_workstation']['docker_version'] - Defaults to 1.6.0
-default['chef_workstation']['chef_server']['user'] = "\#{ENV['USERNAME'] || ENV['USER']}"
-default['chef_workstation']['chef_server']['url'] - The chef server url inserted in the `knife.rb`. Defaults to `https://api.opscode.com/organizations/`
-default['chef_workstation']['chef_server']['packages'] - Array of packages installed via `apt-get`. This defaults to the following list:
+- `default["chef_workstation"]["chef_user"]` - Defaults to the name of the user logged in on the host.
+- `default["chef_workstation"]["user"]` - Defaults to 'vagrant'
+- `default["chef_workstation"]["group"]` - Defaults to 'vagrant'
+- `default['chef_workstation']['chefdk_version']` - Defaults to 0.5.1-1
+- `default['chef_workstation']['vagrant_version']` - Defaults to the version on the host
+- `default['chef_workstation']['docker_version']` - Defaults to 1.6.0
+- `default['chef_workstation']['chef_server']['user']` = "\#{ENV['USERNAME'] || ENV['USER']}"
+- `default['chef_workstation']['chef_server']['url']` - The chef server url inserted in the `knife.rb`. Defaults to `https://api.opscode.com/organizations/`
+- `default['chef_workstation']['chef_server']['packages']` - Array of packages installed via `apt-get`. This defaults to the following list:
 
 ```
 [
