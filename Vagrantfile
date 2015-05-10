@@ -2,14 +2,15 @@
 # vi: set ft=ruby :
 
 VAGRANTFILE_API_VERSION = "2"
-USER = ( ENV['USER'] || ENV['USERNAME'] ).downcase
+user = ( ENV['USER'] || ENV['USERNAME'] ).downcase
+sync_folder = '/chef-repo'
 chef_recipe = ["chef_workstation::default"]
 is_windows = (RbConfig::CONFIG['host_os'] =~ /mswin|mingw|cygwin/)
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "hashicorp/precise64"
   config.vm.hostname = "chef-workstation"
-  config.vm.synced_folder ".", "/chef-repo"
+  config.vm.synced_folder ".", sync_folder
   config.ssh.forward_agent = true
 
   config.vm.provider "parallels" do |v, override|
@@ -28,16 +29,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # NAT settings so network isn't super slow
     vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
     vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-    vb.memory = 2048
+    vb.memory = 1024
   end
 
   config.vm.provision "chef_solo" do |chef|
     chef_recipe.each {|recipe| chef.add_recipe recipe}
     chef.json = {
       "chef_workstation" => {
-        "user" => "vagrant",
-        "group" => "vagrant",
-        "chef_user" => "#{USER}"
+        "root_folder" => sync_folder,
+        "vagrant_version" => Vagrant::VERSION,
+        "chef_user" => user
       }
     }
   end
