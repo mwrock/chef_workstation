@@ -33,12 +33,10 @@ end
 execute "su - #{node["chef_workstation"]["user"]} -c 'eval \"$(chef shell-init bash)\"'"
 execute "su - #{node["chef_workstation"]["user"]} -c 'vagrant plugin install vagrant-winrm'"
 
-%w(Gemfile Gemfile.lock).each do |file|
-  cookbook_file File.join(node["chef_workstation"]["root_folder"], file) do
-    source "bundler/#{file}"
-    owner node['chef_workstation']['user']
-    group node['chef_workstation']['group']
-  end
+cookbook_file File.join(node["chef_workstation"]["root_folder"], 'Gemfile') do
+  source "bundler/Gemfile"
+  owner node['chef_workstation']['user']
+  group node['chef_workstation']['group']
 end
 
 execute 'chef exec bundle install' do
