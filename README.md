@@ -15,6 +15,8 @@ Installs an ubuntu 12.02 box with:
 
 This box is an adaptation of the vagrant box we use at CenturyLink cloud developed by Tim Shakarian, Drew Miller and myself. I have updated it and removed some of our CenturyLink specific plumbing to try and make it universally usable.
 
+> :warning: If using test-kitchen for testing cookbooks, this box is ideally suited to using the `kitchen-docker` driver or your favorite cloud driver. It is not intended for use with the `kitchen-vagrant` driver using a local hypervisor (VMWare Workstation, VirtualBox, Hyper-V, etc.) since this box itself is typically run in a local hypervisor.
+
 ## Prerequisites
 
 ### Install vagrant
