@@ -6,7 +6,7 @@ default['chef_workstation']['vagrant_version'] = '1.7.2'
 default['chef_workstation']['docker_version'] = '1.6.0'
 default['chef_workstation']['chef_server']['user'] = "\#{ENV['USERNAME'] || ENV['USER']}"
 default['chef_workstation']['chef_server']['url'] = "https://api.opscode.com/organizations/"
-default['chef_workstation']['chef_server']['packages'] = [
+default['chef_workstation']['packages'] = [
   'apt-transport-https',
   'apparmor',
   'build-essential',
@@ -18,4 +18,11 @@ default['chef_workstation']['chef_server']['packages'] = [
   "lxc-docker-#{node["chef_workstation"]["docker_version"]}",
   'nano',
   'squid3'
+]
+default['chef_workstation']['gems'] = [
+  'chef-vault',
+  'kitchen-docker',
+  'kitchen-vagrant',
+  'vagrant-wrapper',
+  'kitchen-nodes'
 ]

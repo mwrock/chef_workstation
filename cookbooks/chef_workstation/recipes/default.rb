@@ -12,7 +12,7 @@ execute "update apt-get" do
   command "apt-get update"
 end
 
-package node['chef_workstation']['chef_server']['packages']
+package node['chef_workstation']['packages']
 
 directory '/var/cache/wget'
 
@@ -33,10 +33,17 @@ end
 execute "su - #{node["chef_workstation"]["user"]} -c 'eval \"$(chef shell-init bash)\"'"
 execute "su - #{node["chef_workstation"]["user"]} -c 'vagrant plugin install vagrant-winrm'"
 
-cookbook_file File.join(node["chef_workstation"]["root_folder"], 'Gemfile') do
-  source "bundler/Gemfile"
+gemfile_gems = ''
+node['chef_workstation']['gems'].each do |g|
+  gemfile_gems << "gem '#{g}'\n"
+end
+template File.join(node["chef_workstation"]["root_folder"], 'Gemfile') do
+  source 'Gemfile.erb'
   owner node['chef_workstation']['user']
   group node['chef_workstation']['group']
+  variables({
+    :gems => gemfile_gems
+  })
 end
 
 execute 'chef exec bundle install' do

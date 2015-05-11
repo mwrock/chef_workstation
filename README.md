@@ -82,7 +82,7 @@ The best way to override any of these settings is by changing/adding the overrid
 - `default['chef_workstation']['docker_version']` - Defaults to 1.6.0
 - `default['chef_workstation']['chef_server']['user']` = "\#{ENV['USERNAME'] || ENV['USER']}"
 - `default['chef_workstation']['chef_server']['url']` - The chef server url inserted in the `knife.rb`. Defaults to `https://api.opscode.com/organizations/`
-- `default['chef_workstation']['chef_server']['packages']` - Array of packages installed via `apt-get`. This defaults to the following list:
+- `default['chef_workstation']['packages']` - Array of packages installed via `apt-get`. This defaults to the following list:
 
 ```
 [
@@ -97,6 +97,16 @@ The best way to override any of these settings is by changing/adding the overrid
   "lxc-docker-#{node["chef_workstation"]["docker_version"]}",
   'nano',
   'squid3'
+]
+```
+- `default['chef_workstation']['gems']` - Array of gems to include in the root `Gemfile`. This defaults to the following list:
+```
+[
+  'chef-vault',
+  'kitchen-docker',
+  'kitchen-vagrant',
+  'vagrant-wrapper',
+  'kitchen-nodes'
 ]
 ```
 
