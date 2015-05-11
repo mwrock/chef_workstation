@@ -6,10 +6,10 @@ Installs an ubuntu 12.02 box with:
 - docker
 - nano text editor
 - git
-- ssh forwarding
 - squid proxy cache
 - SSH agent forwarding
-- knife.rb
+- Generated knife.rb
+- Rakefile with tasks for cookbook testing
 - Works with VirtualBox, Parallels, Hyper-V and VMWare
 - Secret energizing ingredient guaranteed to infuze your soul with the spirit of automation!!
 
