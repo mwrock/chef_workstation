@@ -109,20 +109,7 @@ The best way to override any of these settings is by changing/adding the overrid
   'kitchen-nodes'
 ]
 ```
-
-### Gems installed onto the box
-
-The `chef_workstation` cookbook that provisions the box will install the ChefDK which includes most gems used in day to day cookbook development such as `test-kitchen`, `chefspec`, `berkshelf`, etc. In addition to gems installed via the ChefDK, a `Gemfile` is added to the root of the repo that includes these gems:
-
-```
-gem 'chef-vault'
-gem 'kitchen-docker'
-gem 'kitchen-vagrant'
-gem 'vagrant-wrapper'
-gem 'kitchen-nodes'
-```
-
-The cookbook will `bundle install` them into the user gem store so gems added to `files/default/bundler/Gemfile` can be used without needing to use `bundle exec`.
+The cookbook will `bundle install` these into the user gem store so gems added to `files/default/bundler/Gemfile` can be used without needing to use `bundle exec`.
 
 ## Adding cookbooks to develop with your box
 
