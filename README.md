@@ -80,7 +80,7 @@ The best way to override any of these settings is by changing/adding the overrid
 - `default['chef_workstation']['chefdk_version']` - Defaults to 0.5.1-1
 - `default['chef_workstation']['vagrant_version']` - Defaults to the version on the host
 - `default['chef_workstation']['docker_version']` - Defaults to 1.6.0
-- `default['chef_workstation']['chef_server']['user']` = "\#{ENV['USERNAME'] || ENV['USER']}"
+- `default['chef_workstation']['chef_server']['user']` - Defaults to logged in user name on the host
 - `default['chef_workstation']['chef_server']['url']` - The chef server url inserted in the `knife.rb`. Defaults to `https://api.opscode.com/organizations/`
 - `default['chef_workstation']['packages']` - Array of packages installed via `apt-get`. This defaults to the following list:
 
