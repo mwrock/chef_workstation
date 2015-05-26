@@ -7,9 +7,9 @@ default['chef_workstation']['docker_version'] = '1.6.0'
 default['chef_workstation']['chef_server']['user'] = "\#{ENV['USERNAME'] || ENV['USER']}"
 default['chef_workstation']['chef_server']['url'] = "https://api.opscode.com/organizations/"
 default['chef_workstation']['packages'] = [
-  'apt-transport-https',
   'apparmor',
   'build-essential',
+  'curl',
   'git',
   'iptables-persistent',
   'iputils-ping',

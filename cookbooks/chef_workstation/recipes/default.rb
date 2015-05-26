@@ -4,9 +4,11 @@ end
 
 bash 'docker sources' do
   code <<-EOS
-    sh -c "echo deb http://get.docker.io/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
+    sh -c "echo deb https://get.docker.com/ubuntu docker main > /etc/apt/sources.list.d/docker.list"
   EOS
 end
+
+package 'apt-transport-https'
 
 execute "update apt-get" do
   command "apt-get update"
