@@ -24,5 +24,6 @@ default['chef_workstation']['gems'] = [
   'kitchen-docker',
   'kitchen-vagrant',
   'vagrant-wrapper',
-  'kitchen-nodes'
+  'kitchen-nodes',
+  'pry-byebug'
 ]
