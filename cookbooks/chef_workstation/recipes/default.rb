@@ -21,7 +21,7 @@ directory '/var/cache/wget'
 dk_file = "chefdk_#{node['chef_workstation']['chefdk_version']}_amd64.deb"
 dk_url = "https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/#{dk_file}"
 vagrant_file = "vagrant_#{node['chef_workstation']['vagrant_version']}_x86_64.deb"
-vagrant_url = "https://dl.bintray.com/mitchellh/vagrant/#{vagrant_file}"
+vagrant_url = "https://releases.hashicorp.com/vagrant/#{node['chef_workstation']['vagrant_version']}/#{vagrant_file}"
 
 {dk_file => dk_url, vagrant_file => vagrant_url}.each do |k,v|
   cache_file = File.join("/var/cache/wget", k)
